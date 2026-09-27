@@ -16,7 +16,7 @@ createRoot(document.getElementById("root")).render(
         <Route
           path="/"
           element={
-            <CheckAuth protected={true}>
+            <CheckAuth protectedRoute={true}>
               <Tickets />
             </CheckAuth>
           }
@@ -24,7 +24,7 @@ createRoot(document.getElementById("root")).render(
         <Route
           path="/tickets/:id"
           element={
-            <CheckAuth protected={true}>
+            <CheckAuth protectedRoute={true}>
               <TicketDetailsPage />
             </CheckAuth>
           }
@@ -48,7 +48,7 @@ createRoot(document.getElementById("root")).render(
         <Route
           path="/admin"
           element={
-            <CheckAuth protected={true}>
+            <CheckAuth protectedRoute={true}>
               <Admin />
             </CheckAuth>
           }
