@@ -70,7 +70,7 @@ export const updateUser = async (req, res) => {
   const { skills = [], role, email } = req.body;
   try {
     if (req.user?.role !== "admin") {
-      return res.status(403).json({ eeor: "Forbidden" });
+      return res.status(403).json({ error: "Forbidden" });
     }
     const user = await User.findOne({ email });
     if (!user) return res.status(401).json({ error: "User not found" });
