@@ -8,7 +8,7 @@ import analyzeTicket from "../../utils/ai.js";
 export const onTicketCreated = inngest.createFunction(
   { id: "on-ticket-created", retries: 2,
    triggers: {
-      event: "user/signup",
+      event: "ticket/created",
     },
   },
 
