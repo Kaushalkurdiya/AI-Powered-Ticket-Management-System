@@ -1,3 +1,4 @@
+import { inngest } from "../client.js";
 export const onTicketCreated = inngest.createFunction(
   { id: "on-ticket-created", retries: 2 },
   { event: "ticket/created" },
