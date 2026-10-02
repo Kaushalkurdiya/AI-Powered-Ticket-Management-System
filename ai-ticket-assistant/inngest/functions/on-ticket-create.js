@@ -1,7 +1,11 @@
 import { inngest } from "../client.js";
 export const onTicketCreated = inngest.createFunction(
-  { id: "on-ticket-created", retries: 2 },
-  { event: "ticket/created" },
+  { id: "on-ticket-created", retries: 2,
+   triggers: {
+      event: "user/signup",
+    },
+  },
+
   async ({ event, step }) => {
     const { ticketId } = event.data;
 
