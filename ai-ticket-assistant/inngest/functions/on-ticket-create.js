@@ -1,4 +1,10 @@
 import { inngest } from "../client.js";
+import Ticket from "../../models/ticket.js";
+import User from "../../models/user.js";
+import { NonRetriableError } from "inngest";
+import { sendMail } from "../../utils/mailer.js";
+import analyzeTicket from "../../utils/ai.js";
+
 export const onTicketCreated = inngest.createFunction(
   { id: "on-ticket-created", retries: 2,
    triggers: {
