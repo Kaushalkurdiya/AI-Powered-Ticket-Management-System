@@ -9,7 +9,7 @@ const analyzeTicket = async (ticket) => {
 
     const supportAgent = createAgent({
       model: gemini({
-        model: "gemini-3.8-flash",
+        model: "gemini-3.5-flash-lite",
         apiKey: process.env.GEMINI_API_KEY,
       }),
 
