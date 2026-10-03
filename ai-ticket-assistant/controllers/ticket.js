@@ -67,10 +67,10 @@ export const getTicket = async (req, res) => {
         "_id",
       ]);
     } else {
-      ticket = await Ticket.findOne({
-        createdBy: user._id,
-        _id: req.params.id,
-      }).select("title description status createdAt");
+    ticket = await Ticket.findOne({
+  createdBy: user._id,
+  _id: req.params.id,
+}).select("title description status priority relatedSkills helpfulNotes createdAt");
     }
 
     if (!ticket) {
